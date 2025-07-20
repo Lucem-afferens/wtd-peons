@@ -20,6 +20,8 @@
   },
   "homepage": "https://github.com/Lucem-afferens/wtd-aquarelle#readme",
   "devDependencies": {
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.6",
     "sass": "^1.89.2",
     "vite": "^7.0.5"
   }
