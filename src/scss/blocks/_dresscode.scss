@@ -1,0 +1,14 @@
+.dresscode-section {
+    padding: 80px 0 80px 0;
+}
+.dresscode-palette {
+    padding: 0 24px;
+}
+@media (max-width: 600px) {
+    .dresscode-section {
+        padding: 40px 0 40px 0;
+    }
+    .dresscode-palette {
+        padding: 0 6px;
+    }
+} 

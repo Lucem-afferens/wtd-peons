@@ -1,0 +1,94 @@
+/* Footer */
+.footer {
+    background: linear-gradient(180deg, rgba(246,209,231,0) 0%, #a675a7 80%, #7a4e8a 100%);
+    color: $color-white;
+    padding: 80px 0 40px;
+}
+
+.footer-content {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.footer-quote {
+    margin-bottom: 40px;
+}
+
+.footer-quote blockquote {
+    font-family: $font-title;
+    font-size: 2rem;
+    font-style: italic;
+    color: #fff;
+    text-shadow: 0 2px 12px rgba(60, 30, 80, 0.35), 0 1px 0 #fff2;
+    position: relative;
+    font-weight: 600;
+}
+
+.footer-quote blockquote::before {
+    left: -30px;
+}
+
+.footer-quote blockquote::after {
+    right: -30px;
+}
+
+.footer-contacts {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.contact-item a {
+    color: $color-white;
+    text-decoration: none;
+    transition: $transition-btn;
+}
+
+.contact-item a:hover {
+    color: $color-accent-pink;
+}
+
+.contact-item i {
+    color: $color-accent-green;
+    font-size: 1.2rem;
+}
+
+.footer-actions {
+    margin-bottom: 40px;
+}
+
+.calendar-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 30px;
+    background: linear-gradient(135deg, $color-accent-pink, $color-accent-green);
+    color: $color-white;
+    text-decoration: none;
+    border: none;
+    border-radius: $radius-round;
+    font-weight: 500;
+    cursor: pointer;
+    transition: $transition-btn;
+    font-size: 1rem;
+}
+
+.calendar-button:hover {
+    transform: translateY(-2px);
+    box-shadow: $shadow-btn-hover;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    color: rgba(255,255,255,0.7);
+}

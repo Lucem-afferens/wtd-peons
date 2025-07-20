@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Евгений & Александра - Приглашение на свадьбу</title>
+    <meta name="description" content="Приглашение на свадьбу Евгения и Александры 12 августа 2025">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS Animate On Scroll -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css"/>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/src/scss/style.scss">
+
+    <!-- Favicon  -->
+    <link rel="icon" type="image/png" href="icons/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="icons/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="icons/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="icons/favicon/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Евгений & Александра" />
+    <link rel="manifest" href="icons/favicon/site.webmanifest" />
+
+</head>
+
+<body>
+    <div class="site-bg-svg" aria-hidden="true">
+        <svg width="100%" height="100%" viewBox="0 0 1440 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="300" cy="200" rx="320" ry="120" fill="#D6E6F2" fill-opacity="0.25"/>
+            <ellipse cx="1200" cy="150" rx="220" ry="90" fill="#E3D6F5" fill-opacity="0.18"/>
+            <ellipse cx="900" cy="700" rx="300" ry="110" fill="#C8E7E0" fill-opacity="0.18"/>
+            <ellipse cx="400" cy="800" rx="180" ry="70" fill="#E9E6F7" fill-opacity="0.22"/>
+            <ellipse cx="1100" cy="500" rx="160" ry="60" fill="#D1B3C4" fill-opacity="0.13"/>
+        </svg>
+    </div>
+    <!-- SVG floral decor -->
+    <img src="/images/flower-1.svg" class="decor-flower decor-flower--1" alt="" aria-hidden="true"/>
+    <img src="/images/flower-2.svg" class="decor-flower decor-flower--2" alt="" aria-hidden="true"/>
+    <img src="/images/flower-3.svg" class="decor-flower decor-flower--3" alt="" aria-hidden="true"/>
+    <img src="/images/flower-4.svg" class="decor-flower decor-flower--4" alt="" aria-hidden="true"/>
+    <img src="/images/flower-5.svg" class="decor-flower decor-flower--5" alt="" aria-hidden="true"/>
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-background">
+            <div class="watercolor-bg"></div>
+        </div>
+        <div class="music-player">
+            <button id="music-toggle" class="music-btn" aria-label="Включить/выключить музыку">
+                <i class="fas fa-volume-up" id="music-icon"></i>
+            </button>
+            <audio id="hero-audio" loop preload="auto">
+                <source src="audio/tancy-minus-polovinka (online-audio-converter.com).mp3" type="audio/mpeg">
+            </audio>
+        </div>
+        <div class="hero-content">
+            <div class="names" data-aos="fade-up" data-aos-delay="100">Евгений & Александра</div>
+            <div class="invitation-text" data-aos="fade-up" data-aos-delay="200">Приглашают вас на свадьбу</div>
+            <div class="tagline" data-aos="fade-up" data-aos-delay="300">Welcome to day</div>
+            <div class="date" data-aos="fade-up" data-aos-delay="400">12 августа 2025</div>
+            <a href="#program" class="cta-button" data-aos="zoom-in" data-aos-delay="600">
+                <span>Подробнее</span>
+                <i class="fas fa-chevron-down"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Program Section -->
+    <section id="program" class="program">
+        <div class="container">
+            <h2 class="section-title">Программа дня</h2>
+            <div class="program-grid">
+                <div class="program-item" data-aos="fade-up">
+                    <div class="program-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="program-time">15:00</div>
+                    <div class="program-title">Сбор гостей</div>
+                    <div class="program-location">Ресторан "Времена года"</div>
+                </div>
+
+                <div class="program-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="program-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <div class="program-time">16:00</div>
+                    <div class="program-title">Выездная церемония</div>
+                    <div class="program-location">Беседка в парке</div>
+                </div>
+
+                <div class="program-item" data-aos="fade-up" data-aos-delay="400">
+                    <div class="program-icon">
+                        <i class="fas fa-glass-cheers"></i>
+                    </div>
+                    <div class="program-time">17:30</div>
+                    <div class="program-title">Ужин и праздник</div>
+                    <div class="program-location">Банкетный зал</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section id="map" class="map-section">
+        <div class="container">
+            <h2 class="section-title">Как добраться</h2>
+            <div class="map-container" data-aos="fade-up" style="align-items: center; min-height: 400px;">
+                <div class="map-info">
+                    <div class="venue-info">
+                        <h3>Ресторан "Времена года"</h3>
+                        <p><i class="fas fa-map-marker-alt"></i> ул. Парковая, 15, Москва</p>
+                        <p><i class="fas fa-phone"></i> +7 (495) 123-45-67</p>
+                    </div>
+                    <div class="map-actions">
+                        <a href="https://maps.google.com/?q=Ресторан+Времена+года+Москва" target="_blank"
+                            class="map-button">
+                            <i class="fas fa-route"></i>
+                            Построить маршрут
+                        </a>
+                        <a href="https://taxi.yandex.ru/" target="_blank" class="map-button">
+                            <i class="fas fa-taxi"></i>
+                            Яндекс Go
+                        </a>
+                    </div>
+                </div>
+                <div class="map-embed" style="margin-top: 40px; min-height: 300px; height: 100%;">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2245.371615257803!2d37.6172993!3d55.755826!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTXCsDQ1JzIwLjkiTiAzN8KwMzcnMDIuMyJF!5e0!3m2!1sru!2sru!4v1234567890"
+                        width="100%" height="100%" style="border:0; min-height:300px;" allowfullscreen=""
+                        loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dress Code Section -->
+    <section class="dresscode-section">
+        <div class="container">
+            <h2 class="dresscode-title">Дресс-код</h2>
+            <div class="dresscode-desc">Мы будем рады, если вы поддержите атмосферу праздника и выберете наряды в
+                нежных, светлых и природных оттенках. Вот палитра, которая идеально впишется в стиль нашего дня:</div>
+            <div class="dresscode-palette">
+                <div class="dresscode-color" style="background: #B7C9E2;" title="Пастельно-голубой"></div>
+                <div class="dresscode-color" style="background: #E3D6F5;" title="Сиреневый"></div>
+                <div class="dresscode-color" style="background: #F6D1E7;" title="Пионово-розовый"></div>
+                <div class="dresscode-color" style="background: #F88379;" title="Кораллово-красный (акцент)"></div>
+                <div class="dresscode-color" style="background: #C8E7E0;" title="Мятный"></div>
+                <div class="dresscode-color" style="background: #BFC5C7;" title="Серебристо-серый"></div>
+            </div>
+            <div class="dresscode-icons">
+                <div class="dresscode-icon"><i class="fas fa-male"></i><span>Мужчинам: светлый костюм, рубашка, галстук
+                        по желанию</span></div>
+                <div class="dresscode-icon"><i class="fas fa-female"></i><span>Дамам: платье, костюм или юбка в
+                        палитре</span></div>
+                <div class="dresscode-icon"><i class="fas fa-child"></i><span>Детям: удобная нарядная одежда</span>
+                </div>
+            </div>
+            <div class="dresscode-note">Главное — ваше хорошее настроение! Но, пожалуйста, избегайте ярко-красного и
+                полностью чёрного.</div>
+        </div>
+    </section>
+
+    <!-- RSVP Section -->
+    <section class="form">
+        <div class="container">
+            <div class="form__wrapper">
+                <div class="devider devider_form anim"></div>
+                <h2 class="title title_form anim">Анкета гостя</h2>
+                <div class="form__questionion descr descr_form anim">
+                    Ответьте, пожалуйста, на несколько вопросов, которые мы для Вас подготовили:
+                </div>
+                <form id="rsvpForm" action="#"> <!--method="post"-->
+                    <div class="form__no-flex anim">
+                        <label for="name" class="font-vibe">Ваше имя и фамилия:</label>
+                        <input type="text" class="form__text" name="name" id="name" placeholder="Введите имя и фамилию"
+                            required autocomplete="name">
+                    </div>
+                    <fieldset class="anim">
+                        <legend class="font-vibe">
+                            Планируете ли Вы присутствовать на свадьбе?
+                        </legend>
+                        <input type="radio" id="yes" name="welcome" checked class="form__input_mr-10" value="Будет">
+                        <label for="yes">С удовольствием приду!</label> <br>
+                        <input type="radio" id="no" name="welcome" class="form__input_mr-10" value="Не будет">
+                        <label for="no">К сожалению, не смогу присутствовать.</label>
+                    </fieldset>
+                    <fieldset class="anim">
+                        <legend class="font-vibe">
+                            Уточните Ваши предпочтения в алкоголе, выбрав один или несколько вариантов:
+                        </legend>
+                        <input name="drinking[]" type="checkbox" id="cognac" value="Коньяк">
+                        <label for="cognac">Коньяк</label> <br>
+                        <input name="drinking[]" type="checkbox" id="whiskey" value="Виски">
+                        <label for="whiskey">Виски</label> <br>
+                        <input name="drinking[]" type="checkbox" id="champagne" value="Шампанское">
+                        <label for="champagne">Шампанское</label> <br>
+                        <input name="drinking[]" type="checkbox" id="vodka" value="Водка">
+                        <label for="vodka">Водка</label> <br>
+                        <input name="drinking[]" type="checkbox" id="red-wine" value="Красное вино">
+                        <label for="red-wine">Красное вино</label> <br>
+                        <input name="drinking[]" type="checkbox" id="white-wine" value="Белое вино">
+                        <label for="white-wine">Белое вино</label> <br>
+                        <input name="drinking[]" type="checkbox" id="non-alcoholic" value="Не пью алкоголь">
+                        <label for="non-alcoholic">Не пью алкоголь</label>
+                    </fieldset>
+                    <fieldset class="anim">
+                        <legend class="font-vibe">
+                            Останетесь ли Вы на второй день?
+                        </legend>
+                        <input type="radio" id="stay" name="stay" value="Останется" required>
+                        <label for="stay">Да</label> <br>
+                        <input type="radio" id="no-stay" name="stay" value=" Не останется">
+                        <label for="no-stay">Нет</label>
+                    </fieldset>
+                    <div class="form__no-flex anim">
+                        <label class="font-vibe" for="partner">Будете ли Вы со своей второй половинкой?</label>
+                        <input type="text" class="form__text" name="partnerName" id="partner"
+                            placeholder="Если ДА, напишите ее/его имя и фамилию">
+                    </div>
+                    <div class="form__no-flex anim">
+                        <label class="font-vibe" for="child">Будут ли с Вами дети?</label>
+                        <input type="text" class="form__text" name="childName" id="child"
+                            placeholder="Если ДА, укажите их имена и возраст">
+                    </div>
+                    <button class="anim button" type="submit"> Отправить </button>
+                </form>
+                <div id="form-toast" class="toast"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gifts Section -->
+    <section id="gifts" class="gifts-section">
+        <div class="container">
+            <h2 class="section-title">Подарки</h2>
+            <div class="gifts-content" data-aos="fade-up">
+                <div class="gifts-text">
+                    <p>Ваше присутствие — лучший подарок.</p>
+                    <p>Но если вы всё же хотите порадовать нас — вот несколько идей:</p>
+                </div>
+
+                <div class="gifts-grid">
+                    <div class="gift-item" data-aos="fade-up" data-aos-delay="100">
+                        <div class="gift-icon">
+                            <i class="fas fa-qrcode"></i>
+                        </div>
+                        <h3>Сбербанк QR</h3>
+                        <p>Для денежного подарка</p>
+                        <button class="gift-button" onclick="showQR()">
+                            <i class="fas fa-external-link-alt"></i>
+                            Открыть QR-код
+                        </button>
+                    </div>
+
+                    <div class="gift-item" data-aos="fade-up" data-aos-delay="200">
+                        <div class="gift-icon">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <h3>Альбом на Wildberries</h3>
+                        <p>Для памятных фотографий</p>
+                        <a href="https://www.wildberries.ru" target="_blank" class="gift-button">
+                            <i class="fas fa-external-link-alt"></i>
+                            Перейти в магазин
+                        </a>
+                    </div>
+
+                    <div class="gift-item" data-aos="fade-up" data-aos-delay="300">
+                        <div class="gift-icon">
+                            <i class="fas fa-gift"></i>
+                        </div>
+                        <h3>Виш-лист на Подаркусе</h3>
+                        <p>Наши пожелания и идеи</p>
+                        <a href="https://podarkus.ru/wishlist/mikhail-anna" target="_blank" class="gift-button">
+                            <i class="fas fa-external-link-alt"></i>
+                            Открыть виш-лист
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Love Story Section -->
+    <section id="love-story" class="love-story-section">
+        <div class="container">
+            <h2 class="section-title">Наша история любви</h2>
+            <div class="story-slider" data-aos="fade-up">
+                <div class="slider-container">
+                    <div class="slide active">
+                        <div class="slide-image">
+                            <img src="/images/first-date.jpg" alt="Первое свидание" loading="lazy">
+                        </div>
+                        <div class="slide-caption">
+                            <h3>Первое свидание</h3>
+                            <p>2019</p>
+                        </div>
+                    </div>
+
+                    <div class="slide">
+                        <div class="slide-image">
+                            <img src="/images/travel.jpg"
+                                alt="Путешествие" loading="lazy">
+                        </div>
+                        <div class="slide-caption">
+                            <h3>Путешествие</h3>
+                            <p>2022</p>
+                        </div>
+                    </div>
+
+                    <div class="slide">
+                        <div class="slide-image">
+                            <img src="/images/marriage-proposal.jpg"
+                                alt="Предложение" loading="lazy">
+                        </div>
+                        <div class="slide-caption">
+                            <h3>Предложение</h3>
+                            <p>2024</p>
+                        </div>
+                    </div>
+
+                    <div class="slide">
+                        <div class="slide-image">
+                            <img src="/images/planning-wedding.png"
+                                alt="Планирование свадьбы" loading="lazy">
+                        </div>
+                        <div class="slide-caption">
+                            <h3>Планирование свадьбы</h3>
+                            <p>2024-2025</p>
+                        </div>
+                    </div>
+
+                    <div class="slide">
+                        <div class="slide-image">
+                            <img src="/images/wedding.jpg" alt="Свадьба" loading="lazy">
+                        </div>
+                        <div class="slide-caption">
+                            <h3>Свадьба</h3>
+                            <p>2025</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slider-controls">
+                    <button class="slider-btn prev">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <div class="slider-dots">
+                        <span class="dot active" onclick="currentSlide(1)"></span>
+                        <span class="dot" onclick="currentSlide(2)"></span>
+                        <span class="dot" onclick="currentSlide(3)"></span>
+                        <span class="dot" onclick="currentSlide(4)"></span>
+                        <span class="dot" onclick="currentSlide(5)"></span>
+                    </div>
+                    <button class="slider-btn next">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Section -->
+    <!-- <section id="video" class="video-section">
+        <div class="container">
+            <h2 class="section-title">Видео-приветствие</h2>
+            <div class="video-container" data-aos="fade-up">
+                <div class="video-placeholder">
+                    <div class="video-overlay">
+                        <i class="fas fa-play-circle"></i>
+                        <p>Наше видео-приглашение</p>
+                    </div>
+                    <iframe width="100%" height="100%"
+                        src="https://vk.com/video_ext.php?oid=-12345678&id=987654321&hash=abcdef1234567890"
+                        title="Видео-приглашение" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section> -->
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-quote">
+                    <blockquote>
+                        «Счастье — это просто быть рядом»
+                    </blockquote>
+                </div>
+
+                <div class="footer-contacts">
+                    <div class="contact-item">
+                        <strong>Контакты ведущего:</strong>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:vedushiy@example.com">vedushiy@example.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-whatsapp"></i>
+                        <a href="https://wa.me/79001112233">+7 (900) 111-22-33</a>
+                    </div>
+                </div>
+
+                <div class="footer-actions">
+                    <button class="calendar-button" onclick="downloadICS()">
+                        <i class="fas fa-calendar-plus"></i>
+                        Добавить в календарь
+                    </button>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Евгений & Александра. Создано с любовью.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- QR Modal -->
+    <div id="qr-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>QR-код для подарка</h3>
+            <div class="qr-code">
+                <div class="qr-placeholder">
+                    <i class="fas fa-qrcode"></i>
+                    <p>QR-код Сбербанка</p>
+                </div>
+            </div>
+            <p>Отсканируйте для перевода</p>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div id="success-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="success-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h3>Спасибо!</h3>
+            <p>Ваш ответ на приглашение отправлен. Ждём вас на нашей свадьбе!</p>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script type="module" src="/src/main.js"></script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>AOS.init({ once: true, offset: 60, duration: 900, easing: 'ease-out-cubic' });</script>
+</body>
+
+</html>

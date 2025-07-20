@@ -1,0 +1,662 @@
+@import 'base/variable';
+@import 'blocks/index';
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: $font-main;
+    line-height: 1.6;
+    color: $peony-violet;
+    background: $peony-tender-gradient;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: $max-width-container;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+    border-radius: $radius-xxxl;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-family: $font-title;
+    font-weight: 500;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: $peony-violet;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(90deg, $peony-blue, $peony-lavender);
+}
+
+
+
+
+
+
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background-color: $color-white;
+    margin: 15% auto;
+    padding: 40px;
+    border-radius: $radius-xxxl;
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+    position: relative;
+    animation: modalSlideIn 0.3s ease;
+}
+
+.close {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    color: $color-grey;
+    transition: $transition-btn;
+}
+
+.close:hover {
+    color: $color-black;
+}
+
+.qr-code {
+    margin: 30px 0;
+}
+
+.qr-placeholder {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    background: linear-gradient(135deg, $color-accent-pink, $color-accent-green);
+    border-radius: $radius-xxxl;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: $color-white;
+}
+
+.qr-placeholder i {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.success-icon {
+    font-size: 4rem;
+    color: $color-accent-green;
+    margin-bottom: 20px;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    .names {
+        font-size: 2.5rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .program-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .gifts-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-contacts {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .footer-quote blockquote {
+        font-size: 1.5rem;
+    }
+    
+    .footer-quote blockquote::before,
+    .footer-quote blockquote::after {
+        display: none;
+    }
+    
+    .rsvp-form {
+        padding: 30px 20px;
+    }
+    
+    .slider-container {
+        height: 300px;
+    }
+    
+    .image-placeholder i {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .names {
+        font-size: 2rem;
+    }
+    
+    .date {
+        font-size: 1.5rem;
+    }
+    
+    .program-item {
+        padding: 30px 20px;
+    }
+    
+    .gift-item {
+        padding: 30px 20px;
+    }
+    
+    .modal-content {
+        margin: 10% auto;
+        padding: 30px 20px;
+    }
+}
+
+/* AOS Animation Classes */
+[data-aos] {
+    opacity: 0;
+    transition: all 0.6s ease;
+}
+
+[data-aos].aos-animate {
+    opacity: 1;
+}
+
+[data-aos="fade-up"] {
+    transform: translateY(30px);
+}
+
+[data-aos="fade-up"].aos-animate {
+    transform: translateY(0);
+}
+
+.checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 400;
+    position: relative;
+    padding: 0;
+    line-height: 1.2;
+}
+
+.checkbox-label input[type="checkbox"] {
+    display: none;
+}
+
+.checkbox-custom {
+    width: 20px;
+    height: 20px;
+    min-width: 20px;
+    min-height: 20px;
+    border: 2px solid $color-grey-light;
+    border-radius: $radius-xxxl;
+    background: $color-white;
+    position: relative;
+    transition: $transition-btn;
+    display: inline-block;
+    box-sizing: border-box;
+    vertical-align: middle;
+    margin-top: 2px;
+}
+
+.checkbox-label input[type="checkbox"]:checked + .checkbox-custom {
+    border-color: $color-accent-pink;
+    background: linear-gradient(135deg, $color-accent-pink, $color-accent-green);
+}
+
+.checkbox-label input[type="checkbox"]:checked + .checkbox-custom::after {
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 2px;
+    width: 7px;
+    height: 12px;
+    border: solid $color-white;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+}
+
+.required-asterisk {
+    color: $color-error;
+    margin-left: 4px;
+    font-size: 1.1em;
+    vertical-align: middle;
+}
+
+/* --- RSVP/Guest Form Custom Styles --- */
+.form {
+    padding: 100px 0;
+}
+.form__wrapper {
+    max-width: 600px;
+    margin: 0 auto;
+    background: $peony-syringa;
+    box-shadow: 0 10px 30px rgba($peony-blue, 0.10);
+    border-radius: $radius-xxxl;
+    padding: 48px 32px 40px 32px;
+    position: relative;
+    z-index: 2;
+}
+.devider_form {
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, $color-accent-pink, $color-accent-green);
+    border-radius: $radius-xxxl;
+    margin: 0 auto 32px auto;
+}
+.title_form {
+    font-family: $font-title;
+    font-size: 2.2rem;
+    color: $color-brown;
+    text-align: center;
+    margin-bottom: 18px;
+    font-weight: 600;
+}
+.descr_form {
+    text-align: center;
+    color: $color-grey-dark;
+    font-size: 1.1rem;
+    margin-bottom: 32px;
+}
+.form__no-flex {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 28px;
+}
+.form__no-flex label {
+    font-family: $font-main;
+    font-size: 1.05rem;
+    color: $color-brown;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+.form__text {
+    padding: 14px 18px;
+    border: 2px solid $color-bg-lighter;
+    border-radius: $radius-xxxl;
+    font-size: 1rem;
+    font-family: $font-main;
+    transition: $transition-btn;
+    background: $color-bg-light;
+}
+.form__text:focus {
+    border-color: $color-accent-pink;
+    outline: none;
+}
+fieldset {
+    border: none;
+    margin: 0 0 28px 0;
+    padding: 0;
+}
+legend {
+    font-family: $font-main;
+    color: $color-brown;
+    font-size: 1.05rem;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+/* Radio & Checkbox */
+input[type="radio"], input[type="checkbox"] {
+    accent-color: $color-accent-pink;
+    width: 18px;
+    height: 18px;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+fieldset label {
+    font-size: 1rem;
+    color: $color-black;
+    font-family: $font-main;
+    margin-bottom: 0;
+    vertical-align: middle;
+    margin-right: 18px;
+}
+fieldset label:last-child {
+    margin-right: 0;
+}
+fieldset input[type="checkbox"] + label,
+fieldset input[type="radio"] + label {
+    margin-right: 0;
+}
+.button {
+    display: inline-block;
+    width: 100%;
+    padding: 16px 0;
+    background: linear-gradient(90deg, $color-accent-pink, $color-accent-green);
+    color: $color-white;
+    font-family: $font-main;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: $radius-round;
+    box-shadow: $shadow-btn;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: $transition-btn;
+}
+.button:hover {
+    background: linear-gradient(90deg, $color-accent-green, $color-accent-pink);
+    box-shadow: $shadow-btn-hover;
+    transform: translateY(-1px) scale(1.015);
+    filter: drop-shadow(0 0 4px $color-accent-pink55);
+}
+.font-vibe {
+    font-family: $font-main;
+    font-weight: 500;
+}
+.toast {
+    display: none;
+    position: fixed;
+    left: 50%;
+    bottom: 40px;
+    transform: translateX(-50%);
+    background: linear-gradient(90deg, $color-success-light 60%, $color-success-lighter 100%);
+    color: $color-success-dark;
+    border-radius: $radius-xxxl;
+    border: 1.5px solid $color-success-main;
+    box-shadow: $shadow-main;
+    padding: 18px 32px;
+    font-size: 1.1rem;
+    z-index: 9999;
+    opacity: 0;
+    pointer-events: none;
+    transition: $transition-btn;
+    animation: none;
+}
+.toast.toast--show {
+    display: block;
+    opacity: 1;
+    pointer-events: auto;
+}
+@media (max-width: 600px) {
+    .form__wrapper {
+        padding: 24px 8px 24px 8px;
+    }
+    .title_form {
+        font-size: 1.3rem;
+    }
+    .form__text {
+        font-size: 0.95rem;
+    }
+    .toast {
+        padding: 12px 10px;
+        font-size: 1rem;
+    }
+}
+/* --- End Guest Form Styles --- */
+
+/* --- Dress Code Section --- */
+.dresscode-section {
+    padding: 80px 0 60px 0;
+}
+.dresscode-title {
+    font-family: $font-title;
+    font-size: 2rem;
+    color: $color-brown;
+    text-align: center;
+    margin-bottom: 18px;
+    font-weight: 600;
+}
+.dresscode-desc {
+    text-align: center;
+    color: $color-grey-dark;
+    font-size: 1.1rem;
+    margin-bottom: 28px;
+}
+.dresscode-palette {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    margin-bottom: 32px;
+}
+.dresscode-color {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 2.5px solid $color-white;
+    box-shadow: $shadow-card;
+    transition: $transition-btn;
+    cursor: pointer;
+}
+.dresscode-color:hover {
+    transform: scale(1.08);
+    box-shadow: $shadow-card-hover;
+}
+.dresscode-icons {
+    display: flex;
+    justify-content: center;
+    gap: 36px;
+    margin-bottom: 22px;
+    flex-wrap: wrap;
+}
+.dresscode-icon {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1.05rem;
+    color: $color-brown;
+    background: $color-white;
+    border-radius: $radius-xxxl;
+    padding: 12px 22px;
+    box-shadow: $shadow-card;
+    margin-bottom: 10px;
+}
+.dresscode-icon i {
+    font-size: 1.5rem;
+    color: $color-accent-green;
+}
+.dresscode-note {
+    text-align: center;
+    color: $color-error;
+    font-size: 1rem;
+    margin-top: 18px;
+    font-style: italic;
+}
+@media (max-width: 700px) {
+    .dresscode-palette {
+        gap: 10px;
+    }
+    .dresscode-color {
+        width: 36px;
+        height: 36px;
+    }
+    .dresscode-icons {
+        gap: 12px;
+    }
+    .dresscode-icon {
+        font-size: 0.97rem;
+        padding: 10px 10px;
+    }
+}
+/* --- End Dress Code Section --- */
+
+/* --- Music Player Button --- */
+.music-player {
+    position: fixed;
+    top: 32px;
+    right: 48px;
+    z-index: 100;
+}
+.music-btn {
+    background: rgba(255,255,255,0.7);
+    border: none;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: $shadow-btn;
+    cursor: pointer;
+    transition: $transition-btn;
+    outline: none;
+}
+.music-btn:hover, .music-btn:focus {
+    background: rgba(220,220,220,0.5);
+    box-shadow: $shadow-btn-hover;
+    transform: scale(1.08);
+}
+.music-btn i {
+    font-size: 1.6rem;
+    color: $color-brown;
+    transition: $transition-btn;
+}
+.music-btn:hover i, .music-btn:focus i {
+    color: $color-brown-dark;
+}
+@media (max-width: 700px) {
+    .music-player {
+        top: 16px;
+        right: 16px;
+    }
+    .music-btn {
+        width: 38px;
+        height: 38px;
+    }
+    .music-btn i {
+        font-size: 1.2rem;
+    }
+}
+/* --- End Music Player Button --- */ 
+
+.site-bg-svg {
+    position: fixed;
+    z-index: 0;
+    pointer-events: none;
+    top: 0; left: 0; width: 100vw; height: 100vh;
+    opacity: 0.18;
+} 
+
+// === SVG Floral Decor ===
+.decor-flower {
+  position: fixed;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.18;
+  filter: blur(0.5px);
+  transition: opacity 0.4s, filter 0.4s;
+}
+.decor-flower--1 {
+  left: 0; top: 0;
+  width: 220px;
+  transform: rotate(-12deg);
+}
+.decor-flower--2 {
+  right: 0; top: 0;
+  width: 160px;
+  transform: rotate(8deg);
+}
+.decor-flower--3 {
+  left: 0; bottom: 0;
+  width: 180px;
+  transform: rotate(7deg);
+}
+.decor-flower--4 {
+  right: 0; bottom: 0;
+  width: 200px;
+  transform: rotate(-7deg);
+}
+.decor-flower--5 {
+  left: 50%; top: 50%;
+  width: 120px;
+  transform: translate(-50%, -50%) rotate(3deg);
+  opacity: 0.10;
+}
+@media (max-width: 900px) {
+  .decor-flower { opacity: 0.16; filter: blur(0.7px); }
+  .decor-flower--1 { left: 0; top: 0; width: 180px !important; transform: rotate(-8deg); display: block !important; }
+  .decor-flower--2 { right: 0; top: 0; width: 140px !important; transform: rotate(8deg); display: block !important; }
+  .decor-flower--3 { left: 0; bottom: 0; width: 150px !important; transform: rotate(7deg); display: block !important; }
+  .decor-flower--4 { right: 0; bottom: 0; width: 180px !important; transform: rotate(-7deg); display: block !important; }
+  .decor-flower--5 { display: none !important; }
+}
+@media (max-width: 600px) {
+  .decor-flower { opacity: 0.18; filter: blur(0.5px); }
+  .decor-flower--1 { left: 0; top: 0; width: 120px !important; transform: rotate(-8deg); display: block !important; }
+  .decor-flower--2 { right: 0; top: 0; width: 90px !important; transform: rotate(8deg); display: block !important; }
+  .decor-flower--3 { left: 0; bottom: 0; width: 100px !important; transform: rotate(7deg); display: block !important; }
+  .decor-flower--4 { right: 0; bottom: 0; width: 120px !important; transform: rotate(-7deg); display: block !important; }
+  .decor-flower--5 { display: none !important; }
+} 
+

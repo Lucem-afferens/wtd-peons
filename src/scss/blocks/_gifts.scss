@@ -1,0 +1,108 @@
+/* Gifts Section */
+.gifts-section {
+    padding: 100px 0;
+}
+
+.gifts-content {
+    text-align: center;
+}
+
+.gifts-text {
+    margin-bottom: 50px;
+}
+
+.gifts-text p {
+    color: $color-grey-dark;
+    margin-bottom: 10px;
+}
+
+.gifts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    background: transparent;
+    box-shadow: none;
+    border-radius: 0;
+    position: relative;
+    z-index: 1;
+    min-height: 200px;
+}
+
+.gift-item {
+    background: $peony-syringa;
+    border-radius: $radius-xxxl;
+    box-shadow: $shadow-card;
+    transition: $transition-card;
+    text-align: center;
+    min-height: 340px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.gift-item:hover {
+    transform: translateY(-5px);
+    box-shadow: $shadow-card-hover;
+}
+
+.gift-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 20px;
+    background: linear-gradient(135deg, $color-accent-pink, $color-accent-green);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $color-white;
+    font-size: 1.8rem;
+}
+
+.gift-item h3 {
+    font-family: $font-title;
+    font-size: 1.5rem;
+    color: $color-brown;
+    margin-bottom: 10px;
+}
+
+.gift-item p {
+    color: $color-grey-dark;
+    margin-bottom: 20px;
+}
+
+.gift-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 25px;
+    background: linear-gradient(135deg, $color-accent-pink, $color-accent-green);
+    color: $color-white;
+    text-decoration: none;
+    border: none;
+    border-radius: $radius-round;
+    font-weight: 500;
+    cursor: pointer;
+    transition: $transition-btn;
+    font-size: 0.95rem;
+}
+
+.gift-button:hover {
+    transform: translateY(-2px);
+    box-shadow: $shadow-btn-hover;
+}
+
+@media (max-width: 900px) {
+  .gifts-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+  }
+  .gift-item {
+    max-width: 480px;
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+

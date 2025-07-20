@@ -1,0 +1,78 @@
+// Цвета
+$color-accent-pink: #E8B4B8;
+$color-accent-green: #9CAF88;
+$color-brown: #8B5A3C;
+$color-brown-dark: #6B4423;
+$color-bg-light: #f8f9fa;
+$color-bg-lighter: #e9ecef;
+$color-bg-cream: #f6eee3;
+$color-bg-form: #faf9f7;
+$color-bg-border: #f0e6e6;
+$color-error: #b85a5a;
+$color-error-light: #E57373;
+$color-success: #256029;
+$color-success-light: #81c784;
+$color-success-bg: #e8f5e9;
+$color-success-bg2: #b2fab4;
+$color-success-lighter: #b2fab4;
+$color-white: #fff;
+$color-black: #333;
+$color-grey-dark: #666;
+$color-grey: #999;
+$color-grey-light: #ddd;
+$color-accent-pink55: rgba(232, 180, 184, 0.33);
+$color-success-dark: #256029;
+$color-success-main: #81c784;
+$color-border-light: #f0e6e6;
+
+// --- Пионовая прохлада ---
+$peony-blue:      #76b6e7;
+$peony-lavender:  #b186ee;
+$peony-syringa:   #E9E6F7;
+$peony-bg:        #F7FAFF;
+$peony-mint:      #C8E7E0;
+$peony-greyblue:  #B7C9E2;
+$peony-accent:    #D1B3C4;
+$peony-violet:    #a675a7;
+$peony-silver:    #BFC5C7;
+$peony-tender-gradient: linear-gradient(135deg, #f3b3da 0%, #d5bdf6 40%, #f4e7d0 80%, #f2edc7 100%);
+
+// Шрифты
+$font-main: 'Montserrat', sans-serif;
+$font-title: 'Playfair Display', serif;
+
+// Радиусы
+$radius-xs: 6px;
+$radius-s: 8px;
+$radius-m: 10px;
+$radius-l: 12px;
+$radius-xl: 15px;
+$radius-xxl: 16px;
+$radius-xxxl: 20px;
+$radius-xxxxl: 24px;
+$radius-round: 25px;
+$radius-btn: 50px;
+$radius-avatar: 48px;
+
+// Тени
+$shadow-main: 0 10px 30px rgba(232, 180, 184, 0.07);
+$shadow-btn: 0 4px 15px rgba(232, 180, 184, 0.3);
+$shadow-btn-hover: 0 6px 20px rgba(232, 180, 184, 0.4);
+$shadow-card: 0 10px 30px rgba(0,0,0,0.05);
+$shadow-card-hover: 0 15px 40px rgba(232, 180, 184, 0.2);
+$shadow-success: 0 8px 32px rgba(129, 199, 132, 0.18), 0 4px 20px rgba(232, 180, 184, 0.13);
+$shadow-music: 0 2px 8px rgba(232, 180, 184, 0.10);
+
+// Анимации и переходы
+$transition-main: all 0.3s ease;
+$transition-btn: all 0.3s ease;
+$transition-btn-hover: all 0.3s ease;
+$transition-card: all 0.3s ease;
+$transition-shadow: box-shadow 0.3s;
+$transition-bg: background 0.6s cubic-bezier(.4,0,.2,1);
+$transition-all-long: all 0.6s cubic-bezier(.4,0,.2,1);
+
+// Размеры
+$max-width-container: 1200px;
+$max-width-content: 800px;
+$max-width-form: 600px;
