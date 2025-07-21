@@ -33,3 +33,6 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./dist/
           server-dir: /www/welcome-to-day.ru/examples/peons/
+          exclude: |
+            **/.ftp-deploy-sync-state.json
+          dangerous-clean-slate: true
