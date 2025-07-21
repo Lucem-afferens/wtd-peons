@@ -8,7 +8,7 @@
     align-items: end;
     justify-content: center;
     text-align: center;
-    background: url('images/faces.avif') center 30%/cover no-repeat;
+    background: url('/assets/images/faces.avif') center 30%/cover no-repeat;
     overflow: hidden;
 }
 
@@ -62,8 +62,8 @@
     border-radius: 2rem;
     background: rgba(255,255,255,0.22);
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.10);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(7px);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
     border: 1.5px solid rgba(255,255,255,0.25);
     opacity: 1;
     pointer-events: none;
