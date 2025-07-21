@@ -22,3 +22,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+public/all.min.css
+public/webfonts/
+dist/assets/all.min.css
+dist/assets/webfonts/
