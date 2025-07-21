@@ -639,9 +639,8 @@ fieldset input[type="radio"] + label {
 }
 .decor-flower--5 {
   left: 50%; top: 50%;
-  width: 120px;
+  width: 190px;
   transform: translate(-50%, -50%) rotate(3deg);
-  opacity: 0.10;
 }
 @media (max-width: 900px) {
   .decor-flower { opacity: 0.16; filter: blur(0.7px); }
@@ -649,7 +648,7 @@ fieldset input[type="radio"] + label {
   .decor-flower--2 { right: 0; top: 0; width: 140px !important; transform: rotate(8deg); display: block !important; }
   .decor-flower--3 { left: 0; bottom: 0; width: 150px !important; transform: rotate(7deg); display: block !important; }
   .decor-flower--4 { right: 0; bottom: 0; width: 180px !important; transform: rotate(-7deg); display: block !important; }
-  .decor-flower--5 { display: none !important; }
+  .decor-flower--5 { width: 160px !important; display: block !important; }
 }
 @media (max-width: 600px) {
   .decor-flower { opacity: 0.18; filter: blur(0.5px); }
@@ -657,6 +656,6 @@ fieldset input[type="radio"] + label {
   .decor-flower--2 { right: 0; top: 0; width: 90px !important; transform: rotate(8deg); display: block !important; }
   .decor-flower--3 { left: 0; bottom: 0; width: 100px !important; transform: rotate(7deg); display: block !important; }
   .decor-flower--4 { right: 0; bottom: 0; width: 120px !important; transform: rotate(-7deg); display: block !important; }
-  .decor-flower--5 { display: none !important; }
+  .decor-flower--5 { width: 140px !important; display: block !important; }
 } 
 
