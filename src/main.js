@@ -1,3 +1,8 @@
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
+AOS.init();
+
 // DOM Content Loaded
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize all functionality
@@ -327,6 +332,37 @@ window.changeSlide = changeSlide;
 function currentSlideFunc(n) {
     showSlide(n - 1);
     resetSliderInterval();
+}
+// Обработка свайпов
+const sliderContainer = document.querySelector('.slider-container'); // Или замени на правильный класс
+
+if (sliderContainer) {
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    sliderContainer.addEventListener('touchstart', function (e) {
+        touchStartX = e.changedTouches[0].screenX;
+    });
+
+    sliderContainer.addEventListener('touchend', function (e) {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipeGesture();
+    });
+
+    function handleSwipeGesture() {
+        const swipeThreshold = 50; // Минимальное расстояние для свайпа
+        const distance = touchStartX - touchEndX;
+
+        if (Math.abs(distance) > swipeThreshold) {
+            if (distance > 0) {
+                // Свайп влево — следующий слайд
+                changeSlide(1, true);
+            } else {
+                // Свайп вправо — предыдущий слайд
+                changeSlide(-1, true);
+            }
+        }
+    }
 }
 window.currentSlide = currentSlideFunc;
 
