@@ -25,6 +25,13 @@ jobs:
       - name: Build project
         run: npm run build
 
+      - name: Prepare files for deployment
+        run: |
+          # Копируем статические файлы в dist
+          cp -r public/assets/webfonts dist/
+
+          echo "Files prepared for deployment"
+
       - name: Deploy to FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
