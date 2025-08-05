@@ -492,3 +492,14 @@ function initCalendarDownload() {
         URL.revokeObjectURL(url);
     };
 }
+
+// Preloader
+const img = new Image();
+img.src = 'assets/images/faces.avif'; // путь к вашему фону
+
+img.onload = () => {
+  // Когда фон загрузился — убираем затемнение
+  document.getElementById('loading-screen').classList.add('loaded');
+  document.body.classList.add('loaded');
+  document.body.style.overflow = 'auto'; // возвращаем прокрутку
+};

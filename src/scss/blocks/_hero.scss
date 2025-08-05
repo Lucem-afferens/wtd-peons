@@ -1,15 +1,40 @@
+
+// For preloader
+  #loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #efcbfb;
+    filter: blur(10px) brightness(90%);
+    z-index: 9999;
+    transition: opacity 1.2s ease;
+    pointer-events: all;
+  }
+  
+  #loading-screen.loaded {
+    opacity: 0;
+    pointer-events: none;
+  }
+    .hero {
+        position: relative;
+        height: 100vh;
+        height: 100svh;
+        display: flex;
+        align-items: end;
+        justify-content: center;
+        text-align: center;
+        background: url('/assets/images/faces.avif') center 30%/cover no-repeat;
+        overflow: hidden;
+    }
+  
+  body.loaded .hero {
+    opacity: 1;
+  }
+
+
 /* Hero Section */
-.hero {
-    position: relative;
-    height: 100vh;
-    height: 100svh;
-    display: flex;
-    align-items: end;
-    justify-content: center;
-    text-align: center;
-    background: url('/assets/images/faces.avif') center 30%/cover no-repeat;
-    overflow: hidden;
-}
 
 .hero-background {
     position: absolute;
@@ -75,13 +100,37 @@
     }
 }
 
+@media (min-height:1000px) or (max-width:768px) {
+    .names {
+        width: 60%;
+        margin: 0 auto;
+        position: relative;
+        line-height: 1;
+        span {
+            display: none;
+        }
+        .small__and {
+            display: block;
+            position: absolute;
+            width: 120%;
+            height: 120%;
+            background: url('/assets/images/&.svg') no-repeat 50%/contain;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+            opacity: .3;
+        }
+    }
+}
+
 .names {
     font-family: $font-title;
     font-size: 3.5rem;
     font-weight: 600;
-    color: darken($peony-violet, 10%);
+    color:#efcbfb;
     margin-bottom: 1rem;
-    text-shadow: 0 2px 12px rgba(124, 106, 159, 0.25), 0 1px 0 #fff;
+    text-shadow: 1px 2px 4px #000;
 }
 
 .invitation-text {
@@ -89,13 +138,15 @@
     color: $peony-blue;
     margin-bottom: 0.5rem;
     font-weight: 300;
-    text-shadow: 0 2px 8px rgba($peony-violet, 0.10);
+    text-shadow: 0px 0px 5px #000;
 }
 
 .date {
     font-family: $font-title;
     font-size: 2rem;
-    color: $color-accent-green;
+    background: $peony-tender-gradient;
+    background-clip: text;
+    color: transparent;
     margin-bottom: 0.5rem;
     font-weight: 500;
 }
@@ -105,7 +156,7 @@
     color: $peony-blue;
     margin-bottom: 3rem;
     font-style: italic;
-    text-shadow: 0 2px 8px rgba($peony-violet, 0.10);
+    text-shadow: 0px 0px 5px #000;
 }
 
 .cta-button {
