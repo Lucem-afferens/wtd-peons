@@ -425,30 +425,6 @@ fieldset input[type="radio"] + label {
     font-family: $font-main;
     font-weight: 500;
 }
-.toast {
-    display: none;
-    position: fixed;
-    left: 50%;
-    bottom: 40px;
-    transform: translateX(-50%);
-    background: linear-gradient(90deg, $color-success-light 60%, $color-success-lighter 100%);
-    color: $color-success-dark;
-    border-radius: $radius-xxxl;
-    border: 1.5px solid $color-success-main;
-    box-shadow: $shadow-main;
-    padding: 18px 32px;
-    font-size: 1.1rem;
-    z-index: 9999;
-    opacity: 0;
-    pointer-events: none;
-    transition: $transition-btn;
-    animation: none;
-}
-.toast.toast--show {
-    display: block;
-    opacity: 1;
-    pointer-events: auto;
-}
 @media (max-width: 600px) {
     .form__wrapper {
         padding: 24px 8px 24px 8px;
@@ -458,10 +434,6 @@ fieldset input[type="radio"] + label {
     }
     .form__text {
         font-size: 0.95rem;
-    }
-    .toast {
-        padding: 12px 10px;
-        font-size: 1rem;
     }
 }
 /* --- End Guest Form Styles --- */

@@ -12,3 +12,35 @@
         padding: 24px 8px 24px 8px;
     }
 } 
+
+
+.toast {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #333;
+    color: #fff;
+    padding: 16px 24px;
+    border-radius: 8px;
+    font-size: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    transform: translateY(20px);
+    z-index: 9999;
+}
+.toast.show {
+    opacity: .7;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+.toast.success {
+    background-color: #ac3b61;
+}
+// .toast.error {
+//     background-color: #da192c;
+// }
+.toast.error {
+    background-color: #ac3b61; // При продакшен и подключении файла send.php вместо этой части кода использовать тот, что закомментирован выше
+}

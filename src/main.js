@@ -8,40 +8,40 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize all functionality
     initSmoothScrolling();
     // initAOS(); // Удаляю или комментирую функцию initAOS и её вызов, чтобы не мешать работе оригинального AOS
-    initRSVPForm();
+    // initRSVPForm();
     initSlider();
     initModals();
     initGiftIdeas();
     initCalendarDownload();
     // Логика для условных полей RSVP
-    const partnerRadios = document.querySelectorAll('input[name="with_partner"]');
-    const partnerInput = document.getElementById('partner_name');
-    if (partnerRadios.length && partnerInput) {
-        partnerRadios.forEach(radio => {
-            radio.addEventListener('change', function() {
-                if (this.value === 'yes') {
-                    partnerInput.style.display = 'block';
-                } else {
-                    partnerInput.style.display = 'none';
-                    partnerInput.value = '';
-                }
-            });
-        });
-    }
-    const kidsRadios = document.querySelectorAll('input[name="with_kids"]');
-    const kidsInput = document.getElementById('kids_info');
-    if (kidsRadios.length && kidsInput) {
-        kidsRadios.forEach(radio => {
-            radio.addEventListener('change', function() {
-                if (this.value === 'yes') {
-                    kidsInput.style.display = 'block';
-                } else {
-                    kidsInput.style.display = 'none';
-                    kidsInput.value = '';
-                }
-            });
-        });
-    }
+    // const partnerRadios = document.querySelectorAll('input[name="with_partner"]');
+    // const partnerInput = document.getElementById('partner_name');
+    // if (partnerRadios.length && partnerInput) {
+    //     partnerRadios.forEach(radio => {
+    //         radio.addEventListener('change', function() {
+    //             if (this.value === 'yes') {
+    //                 partnerInput.style.display = 'block';
+    //             } else {
+    //                 partnerInput.style.display = 'none';
+    //                 partnerInput.value = '';
+    //             }
+    //         });
+    //     });
+    // }
+    // const kidsRadios = document.querySelectorAll('input[name="with_kids"]');
+    // const kidsInput = document.getElementById('kids_info');
+    // if (kidsRadios.length && kidsInput) {
+    //     kidsRadios.forEach(radio => {
+    //         radio.addEventListener('change', function() {
+    //             if (this.value === 'yes') {
+    //                 kidsInput.style.display = 'block';
+    //             } else {
+    //                 kidsInput.style.display = 'none';
+    //                 kidsInput.value = '';
+    //             }
+    //         });
+    //     });
+    // }
     // Логика для чекбокса 'Не пью алкоголь'
     const alcoholNone = document.getElementById('non-alcoholic');
     const alcoholCheckboxes = document.querySelectorAll('input[name="drinking[]"]:not(#non-alcoholic)');
@@ -73,30 +73,30 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     }
-    // Обработка отправки новой формы rsvpForm
-    const guestForm = document.getElementById('rsvpForm');
-    const toast = document.getElementById('form-toast');
-    if (guestForm) {
-        guestForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            const submitBtn = guestForm.querySelector('button[type="submit"]');
-            const originalBtn = submitBtn.innerHTML;
-            submitBtn.innerHTML = '<span class="spinner"></span> Отправка...';
-            submitBtn.disabled = true;
-            setTimeout(() => {
-                guestForm.reset();
-                submitBtn.innerHTML = originalBtn;
-                submitBtn.disabled = false;
-                if (toast) {
-                    toast.textContent = 'Спасибо! Ваш ответ успешно отправлен.';
-                    toast.classList.add('toast--show');
-                    setTimeout(() => {
-                        toast.classList.remove('toast--show');
-                    }, 4000);
-                }
-            }, 1800);
-        });
-    }
+    // // Обработка отправки новой формы rsvpForm
+    // const guestForm = document.getElementById('rsvpForm');
+    // const toast = document.getElementById('form-toast');
+    // if (guestForm) {
+    //     guestForm.addEventListener('submit', function(e) {
+    //         e.preventDefault();
+    //         const submitBtn = guestForm.querySelector('button[type="submit"]');
+    //         const originalBtn = submitBtn.innerHTML;
+    //         submitBtn.innerHTML = '<span class="spinner"></span> Отправка...';
+    //         submitBtn.disabled = true;
+    //         setTimeout(() => {
+    //             guestForm.reset();
+    //             submitBtn.innerHTML = originalBtn;
+    //             submitBtn.disabled = false;
+    //             if (toast) {
+    //                 toast.textContent = 'Спасибо! Ваш ответ успешно отправлен.';
+    //                 toast.classList.add('toast--show');
+    //                 setTimeout(() => {
+    //                     toast.classList.remove('toast--show');
+    //                 }, 4000);
+    //             }
+    //         }, 1800);
+    //     });
+    // }
     // Музыка на главном экране
     const audio = document.getElementById('hero-audio');
     const musicBtn = document.getElementById('music-toggle');
@@ -492,6 +492,69 @@ function initCalendarDownload() {
         URL.revokeObjectURL(url);
     };
 }
+
+
+ // Ниже - отправка формы с обраоткой на стороне серврера через send.php
+ document.querySelector("form").addEventListener("submit", function(e) {
+    e.preventDefault();
+  
+    const form = e.target;
+    const submitBtn = form.querySelector("button[type='submit']");
+    const toast = document.getElementById("form-toast");
+    const formData = new FormData(form);
+  
+    // Блокируем кнопку и меняем текст на "Отправка..."
+    submitBtn.disabled = true;
+    const originalText = submitBtn.textContent;
+    submitBtn.textContent = "Отправка...";
+  
+    // --- ВАРИАНТ 1: РЕАЛЬНАЯ ОТПРАВКА НА СЕРВЕР send.php ---
+    // fetch("send.php", {
+    //   method: "POST",
+    //   body: formData
+    // })
+    // .then(response => response.json())
+    // .then(data => {
+    //   toast.textContent = data.message;
+    //   toast.className = "toast show " + (data.success ? "success" : "error");
+  
+    //   if (data.success) {
+    //     form.reset();
+    //   }
+  
+    //   setTimeout(() => {
+    //     toast.className = "toast"; // скрыть сообщение
+    //   }, 8000);
+    // })
+    // .catch(() => {
+    //   toast.textContent = "Сервер недоступен. Попробуйте позже.";
+    //   toast.className = "toast show error";
+    //   setTimeout(() => {
+    //     toast.className = "toast";
+    //   }, 4000);
+    // })
+    // .finally(() => {
+    //   submitBtn.disabled = false;
+    //   submitBtn.textContent = originalText;
+    // });
+  
+    
+    // --- ВАРИАНТ 2: ШАБЛОННАЯ ОТПРАВКА (для демонстрации без PHP) ---
+    setTimeout(() => {
+      toast.textContent = "Спасибо! Ваш ответ получен!";
+      toast.className = "toast show success";
+      form.reset();
+  
+      setTimeout(() => {
+        toast.className = "toast"; // скрыть сообщение
+      }, 8000);
+  
+      submitBtn.disabled = false;
+      submitBtn.textContent = originalText;
+    }, 1500);
+    
+  });
+
 
 // Preloader
 const img = new Image();
