@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initSlider();
     initModals();
     initGiftIdeas();
-    initCalendarDownload();
+    // initCalendarDownload();
     // Логика для условных полей RSVP
     // const partnerRadios = document.querySelectorAll('input[name="with_partner"]');
     // const partnerInput = document.getElementById('partner_name');
@@ -458,38 +458,6 @@ function initGiftIdeas() {
                 document.body.removeChild(modal);
             }
         });
-    };
-}
-
-// Calendar Download
-function initCalendarDownload() {
-    window.downloadICS = function() {
-        const event = {
-            title: 'Свадьба Александры и Евгения',
-            description: 'Приглашение на свадьбу Евгения и Александры',
-            location: 'Ресторан "Времена года", ул. Парковая, 15, Москва',
-            startTime: '2025-08-12T15:00:00',
-            endTime: '2025-08-12T23:00:00'
-        };
-        
-        const icsContent = [
-            'BEGIN:VCALENDAR',
-            'VERSION:2.0',
-            'PRODID:-//hacksw//handcal//NONSGML v1.0//EN',
-            'BEGIN:VEVENT',
-            `DTSTART:${event.startTime.replace(/[-:]/g, '')}`,
-            `DTEND:${event.endTime.replace(/[-:]/g, '')}`
-        ];
-        
-        const blob = new Blob(icsContent, { type: 'text/calendar' });
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = 'invitation.ics';
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
-        URL.revokeObjectURL(url);
     };
 }
 

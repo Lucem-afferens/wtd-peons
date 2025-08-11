@@ -35,6 +35,7 @@
 .footer-contacts {
     display: flex;
     justify-content: center;
+    text-align: center;
     gap: 40px;
     margin-bottom: 40px;
     flex-wrap: wrap;
@@ -43,6 +44,7 @@
 .contact-item {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 10px;
 }
 
